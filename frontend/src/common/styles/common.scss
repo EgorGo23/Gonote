@@ -1,0 +1,12 @@
+$color-red: #ff4f75;
+
+.global-loader {
+  height: 100vh;
+}
+
+nav:after,
+nav > ul:after {
+  display: none; }
+
+.content-box {
+  padding-top: 10rem; }

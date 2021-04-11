@@ -1,0 +1,1 @@
+export { notesWatcher } from './processes';

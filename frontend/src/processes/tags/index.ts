@@ -1,0 +1,1 @@
+export { tagsWatcher } from './processes';
