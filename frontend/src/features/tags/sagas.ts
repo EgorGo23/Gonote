@@ -1,6 +1,6 @@
 import { AxiosPromise } from 'axios';
 import {
-  put, call, select,
+  put, call,
 } from 'redux-saga/effects';
 
 import { ITag } from '@common/types/server-responses';
@@ -19,6 +19,8 @@ function* getUserTagsSaga(
 ): Generator {
   const { userId } = params;
 
+  //TODO
+  //@ts-ignore
   const { data: tags }: AxiosPromise<ITag[]> = yield call(getUserTagsRequest, {
     userId,
   });

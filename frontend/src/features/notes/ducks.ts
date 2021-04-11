@@ -63,15 +63,23 @@ const notesSlice = createSlice({
     setEditableNote: toSetNote,
     clearEditableNote: toClearEditableNote,
     startNoteListLoading: (state) => {
+      //TODO
+      //@ts-ignore
       state.isNoteListLoading = true;
     },
     stopNoteListLoading: (state) => {
+      //TODO
+      //@ts-ignore
       state.isNoteListLoading = false;
     },
     startEditableNoteLoading: (state) => {
+      //TODO
+      //@ts-ignore
       state.isEditableNoteLoading = true;
     },
     stopEditableNoteLoading: (state) => {
+      //TODO
+      //@ts-ignore
       state.isEditableNoteLoading = true;
     },
     startIncNumViewsFetchingLoading: (state) => ({

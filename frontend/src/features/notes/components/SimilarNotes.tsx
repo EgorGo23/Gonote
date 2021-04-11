@@ -3,7 +3,6 @@ import classNames from 'css-bem-classes';
 import * as L from 'korus-ui';
 
 import { INote } from '@common/types/server-responses';
-import { URLS } from '@common/constants';
 
 import { useNotesActions } from '../ducks';
 

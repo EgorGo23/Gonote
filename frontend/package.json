@@ -5,7 +5,7 @@
   "scripts": {
     "test": "npx jest",
     "start": "npm run clean && npm run addAssets && npm run develop",
-    "build": "npm run lint && npm run clean && npm run addAssets && npm run production && npm run clearScss",
+    "build": "npm run lint:frontend && npm run clean && npm run addAssets && npm run production && npm run clearScss",
     "develop": "webpack serve --config ./webpack/app/develop",
     "production": "webpack --config ./webpack/app/production",
     "addStyles": "npx mkdirp ./dist/assets && npx ncp ./node_modules/styles-esphere ./dist/assets",
@@ -13,8 +13,8 @@
     "clean": "npx rimraf ./dist",
     "clearScss": "npx rimraf ./dist/assets/scss",
     "lint:ts": "npx tsc",
-    "lint:js": "eslint src --color --ext .tsx,.ts --fix",
-    "lint": "npm run lint:ts && npm run lint:js",
+    "lint:js": "eslint src --color --ext .tsx,.ts",
+    "check:frontend": "npm run lint:ts && npm run lint:js",
     "api": "nodemon --exec ts-node ./db/json-server.ts"
   },
   "dependencies": {

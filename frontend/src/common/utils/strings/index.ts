@@ -1,4 +1,6 @@
-import { compose, head, tail, toLower, toUpper } from 'ramda';
+import {
+  compose, head, tail, toLower, toUpper,
+} from 'ramda';
 import { v4 } from 'uuid';
 
 /**

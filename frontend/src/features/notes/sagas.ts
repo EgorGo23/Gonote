@@ -22,6 +22,8 @@ function* getNoteListSaga(
 ): Generator {
   const { userId } = params;
 
+  //TODO
+  //@ts-ignore
   const { data: notes }: AxiosPromise<INote[]> = yield call(getNotesRequest, {
     userId,
   });
@@ -34,6 +36,8 @@ function* getNoteSaga(
 ): Generator {
   const { id } = params;
 
+  //TODO
+  //@ts-ignore
   const { data: [note] }: AxiosPromise<INote[]> = yield call(getNoteRequest, { id });
 
   yield put(notesActions.setEditableNote(note));
@@ -49,6 +53,8 @@ function* incNumViewsSaga(
     { ...updatableNoteData, numViews: updatableNoteData.numViews + 1 },
   );
 
+  //TODO
+  //@ts-ignore
   const notes: ReturnType<
     typeof notesSelectors.noteListSelector
   > = yield select(notesSelectors.noteListSelector);

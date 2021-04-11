@@ -49,7 +49,6 @@ export function* incNumViewsFlow(
     yield put(notesActions.startIncNumViewsFetchingLoading());
 
     yield call(notesSagas.incNumViewsSaga, action.payload);
-
   } catch (error) {
 
   } finally {

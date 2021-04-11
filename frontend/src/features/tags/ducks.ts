@@ -32,9 +32,13 @@ const tagsSlice = createSlice({
   reducers: {
     setTagList: toSetTagList,
     startTagListLoading: (state) => {
+      //TODO
+      //@ts-ignore
       state.isTagListLoading = true;
     },
     stopTagListLoading: (state) => {
+      //TODO
+      //@ts-ignore
       state.isTagListLoading = false;
     },
   },

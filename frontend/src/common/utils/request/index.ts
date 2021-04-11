@@ -51,13 +51,13 @@ export const createHttpClient = (apiVersion = 'v1'): HttpClient => {
     config,
     headers = {},
   }: HttpClientParams): AxiosPromise<T> =>
-    axiosInstance.get<T>(url, {
-      headers: {
-        'x-ruid': uuid4(),
-        ...headers,
-      },
-      ...config,
-    });
+      axiosInstance.get<T>(url, {
+        headers: {
+          'x-ruid': uuid4(),
+          ...headers,
+        },
+        ...config,
+      });
 
   /**
    * ### Метод для отправки DELETE-запроса
@@ -137,16 +137,16 @@ export const createHttpClient = (apiVersion = 'v1'): HttpClient => {
     config,
     headers = {},
   }: HttpClientParamsWithData<D>): AxiosPromise<T> =>
-    axiosInstance.request<T>({
-      url,
-      method: 'post',
-      headers: {
-        'x-ruid': uuid4(),
-        ...headers,
-      },
-      ...config,
-      data,
-    });
+      axiosInstance.request<T>({
+        url,
+        method: 'post',
+        headers: {
+          'x-ruid': uuid4(),
+          ...headers,
+        },
+        ...config,
+        data,
+      });
 
   /**
    * ### Метод для отправки PUT-запроса
@@ -167,8 +167,7 @@ export const createHttpClient = (apiVersion = 'v1'): HttpClient => {
     data,
     config,
     headers = {},
-  }: HttpClientParamsWithData<D>): AxiosPromise<T> => {
-    return axiosInstance.request<T>({
+  }: HttpClientParamsWithData<D>): AxiosPromise<T> => axiosInstance.request<T>({
       url,
       method: 'put',
       headers: {
@@ -178,7 +177,6 @@ export const createHttpClient = (apiVersion = 'v1'): HttpClient => {
       ...config,
       data,
     });
-  };
 
   /**
    * ### Метод для отправки PATCH-запроса

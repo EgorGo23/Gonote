@@ -9,7 +9,7 @@ import { GetNotesParams, GetNoteParams, IncNumViews } from './types';
 
 const createEndpoint = buildEndpointCreator(config.api, 'notes');
 
-const { get, post, put } = createHttpClient();
+const { get, put } = createHttpClient();
 
 export const getNotesRequest = ({
   userId,

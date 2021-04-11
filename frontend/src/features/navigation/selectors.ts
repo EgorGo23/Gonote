@@ -10,29 +10,25 @@ const navigationSelector = (state: RootState) => state[config.modules.router];
  * Получение URL страницы
  */
 const pathName = createSelector(navigationSelector, (navigation): string =>
-  pathOr('/', ['location', 'pathname'], navigation),
-);
+  pathOr('/', ['location', 'pathname'], navigation));
 
 /**
  * Получение якорной ссылки
  */
 const hash = createSelector(navigationSelector, (navigation): string =>
-  pathOr('', ['location', 'hash'], navigation),
-);
+  pathOr('', ['location', 'hash'], navigation));
 
 /**
  * Получение query-params в виде объекта
  */
 const queryParams = createSelector(navigationSelector, (navigation) =>
-  pathOr({}, ['location', 'query'], navigation),
-);
+  pathOr({}, ['location', 'query'], navigation));
 
 /**
  * Получение query-params в виде строки
  */
 const searchString = createSelector(navigationSelector, (navigation): string =>
-  pathOr('', ['location', 'search'], navigation),
-);
+  pathOr('', ['location', 'search'], navigation));
 
 export const selectors = {
   pathName,

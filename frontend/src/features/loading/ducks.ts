@@ -35,6 +35,8 @@ const loadingSlice = createSlice({
   name: config.modules.loading,
   initialState,
   reducers: {
+    //TODO
+      //@ts-ignore
     setLoading: toSetLoading,
   },
 });

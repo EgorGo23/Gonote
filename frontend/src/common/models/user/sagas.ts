@@ -15,6 +15,8 @@ export function* getAuthSaga(
 ): Generator {
   const { login, password } = params;
 
+  //TODO
+  //@ts-ignore
   const { data: [user] }: AxiosPromise<IUser> = yield call(getUserRequest, {
     login,
     password,

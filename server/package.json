@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:ts": "npx tsc",
+    "lint:js": "eslint src --color --ext .ts",
+    "check:backend": "npm run lint:ts && npm run lint:js",
+    "start": "nodemon src/index.ts",
+    "build": "npm run compile && npm run execute",
+    "compile": "tsc --build",
+    "execute": "node ./build"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +19,16 @@
     "@types/body-parser": "^1.19.0",
     "@types/express": "^4.17.11",
     "@types/node": "^14.14.37",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "prettier-eslint-cli": "^5.0.1",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   },
   "dependencies": {
