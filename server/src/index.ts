@@ -1,1 +1,3 @@
-console.log('a');
+export default (arg: number) => {
+  console.log(arg);
+};
