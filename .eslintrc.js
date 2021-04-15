@@ -2,6 +2,14 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: ['airbnb-base'],
   plugins: ['@typescript-eslint'],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
+  },
   rules: {
     'max-len': [
       'error',

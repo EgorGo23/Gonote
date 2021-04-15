@@ -1,3 +1,10 @@
-console.log('error');
-console.log('object');
-export default () => 1;
+import * as express from 'express';
+// eslint-disable-next-line no-duplicate-imports
+import { Application } from 'express';
+
+const app: Application = express();
+// const port = 4550;
+
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
