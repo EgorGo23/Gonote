@@ -10,6 +10,18 @@
     "lint:backend": "eslint ./server/src/**/*",
     "lint:frontend": "eslint ./frontend/src/**/*"
   },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": ["npm run lint:backend", "git add"],
+    "{*.json,.huskyrc,.prettierrc,.lintstagedrc,.eslintrc}": [
+      "prettier --write --parser json",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+        "pre-commit": "lint-staged"
+    }
+  },
   "homepage": "https://github.com/EgorGo23/gonote#readme",
   "devDependencies": {
     "@types/body-parser": "^1.19.0",

@@ -1,7 +1,0 @@
-{
-  "*.{ts,tsx,js,jsx}": ["npm run lint:backend", "git add"],
-  "{*.json,.huskyrc,.prettierrc,.lintstagedrc,.eslintrc}": [
-    "prettier --write --parser json",
-    "git add"
-  ]
-}
