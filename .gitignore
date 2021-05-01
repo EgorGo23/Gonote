@@ -10,4 +10,6 @@ coverage
 
 .idea
 
+.env
+
 .DS_Store

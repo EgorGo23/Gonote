@@ -1,19 +1,30 @@
-import express, { Request, Response, Application } from 'express';
-import * as dotenv from 'dotenv';
+import express, { Application } from 'express';
+import cors from 'cors';
 
-dotenv.config();
+import { db } from './models';
+import { router } from './routes';
 
-const app: Application = express();
 const PORT = process.env.PORT || 4550;
 
+const app: Application = express();
+
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use('/api', router);
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Welcome');
-});
+const start = async () => {
+  try {
+    await db.sequelize.authenticate();
+    await db.sequelize.sync({ force: true });
 
-app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Application was started on ${PORT}`);
-});
+    app.listen(PORT, () => {
+      // eslint-disable-next-line no-console
+      console.log(`Application was started on ${PORT}`);
+    });
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(error);
+  }
+};
+
+start();
+

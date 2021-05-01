@@ -28,12 +28,12 @@ export const NoteItem: React.FC<Props> = memo(({ note }) => {
     >
       <L.Div className={cn('image')}>
         <L.Img src={note.imageUrl} alt="note-image" />
-      </L.Div>
+      </L.Div >
       <L.Div className={`${cn('content')} d-flex flex-column`}>
         <L.Div
           className={`${cn('content__header')} d-flex align-items-center justify-content-between`}
         >
-          <L.H3>{note.title}</L.H3>
+          <L.H3 >{note.title}</L.H3>
           <L.Div _d-flex _flex-column _align-items-end>
             <L.Div>
               Опубликовано:
